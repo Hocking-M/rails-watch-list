@@ -1,0 +1,28 @@
+<div class= container >
+  <div class= row >
+    <div class= col-md-6 >
+      <h1> Lists </h1>
+      <table class= table >
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th> Description </th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lists.each do |list| %>
+            <tr>
+              <td> <%= list.name %> </td>
+              <td> <%= link_to 'Show', list %> </td>
+            </tr>
+          <% end %>
+
+          <tr>
+            <td> <%= link_to 'New List', new_list_path %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
