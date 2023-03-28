@@ -1,3 +1,8 @@
 <div id="<%= dom_id(@list) %>">
   <h2> <%= @list.name %> </h2>
+  <p> <%= @list.bookmarks.each do |bookmark| %> </p>
+  <p> <%= bookmark.comment %> </p>
+ <% end %>
+  <% if @list.bookmarks.empty? %> <p> No bookmarks yet </p> <% end %>
+  <p> <%= link_to 'New Bookmark', new_list_bookmark_path(@list) %> </p>
 </div>
