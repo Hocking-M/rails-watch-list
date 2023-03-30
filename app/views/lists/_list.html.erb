@@ -2,6 +2,8 @@
   <h2> <%= @list.name %> </h2>
   <p> <%= @list.bookmarks.each do |bookmark| %> </p>
   <p> <%= bookmark.comment %> </p>
+  <p> <%= link_to 'Edit', new_list_bookmark_path(@list, bookmark) %> </p>
+  <p> <%= link_to 'Delete', list_bookmarks_url(@list, bookmark), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </p>
  <% end %>
   <% if @list.bookmarks.empty? %> <p> No bookmarks yet </p> <% end %>
   <p> <%= link_to 'New Bookmark', new_list_bookmark_path(@list) %> </p>

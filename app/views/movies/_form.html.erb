@@ -1,0 +1,11 @@
+
+<div class="form-group">
+  <%= simple_form_for(@movie) do |f| %>
+    <%= f.input :title, autofocus: true, placeholder: 'Add title to movie', input_html: { class: 'form-control' } %>
+    <%= f.input :overview, autofocus: true, placeholder: 'Add overview to movie', input_html: { class: 'form-control' } %>
+    <%= f.input :poster_url, autofocus: true, placeholder: 'Add poster_url to movie', input_html: { class: 'form-control' } %>
+    <%= f.input :rating, autofocus: true, placeholder: 'Add rating to movie', input_html: { class: 'form-control' } %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+  <p> <%= link_to 'Back', movies_path %> </p>
+</div>

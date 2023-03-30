@@ -1,0 +1,17 @@
+<%= render 'header' %>
+<div class= "container" >
+  <div class= "row" >
+    <div class= "col-md-6" >
+      <img class= "img-responsive"  src= "<%= @movie.poster_url %>"  alt= "" >
+    </div>
+    <div class="col-md-6">
+      <h1> <%= @movie.title %> </h1>
+      <p> <%= link_to 'Edit', edit_movie_path(@movie) %> </p>
+      <p> <%= link_to 'Back', movies_path %> </p>
+    </div>
+    <div>
+      <p><span class= "movie-rating" > <%= @movie.rating %> </span> </p>
+      <p><%= @movie.overview %> <p>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,9 @@
+<%= render 'header' %>
 <div class= "container" >
   <div class= "row" >
     <div class= "col-md-6" >
       <h1> Edit List </h1>
-      <%=  render 'form'  %>
+      <%=  render 'form', list: @list  %>
       <p> <%= link_to 'Back', lists_path %> </p>
     </div>
   </div>
