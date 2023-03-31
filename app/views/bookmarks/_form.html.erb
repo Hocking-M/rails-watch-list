@@ -1,7 +1,7 @@
 <div class="form-group">
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment, autofocus: true, placeholder: 'Add comment to bookmark', input_html: { class: 'form-control' } %>
-    <%= f.association :movie, label: 'Movie', as: :select, collection: @movies %>
+    <%= f.association :movie, label: 'Movie'%>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
   <p> <%= link_to 'Back', list_path(@list) %> </p>
