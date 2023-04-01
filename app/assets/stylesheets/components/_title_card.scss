@@ -1,0 +1,24 @@
+.card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .card-title {
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

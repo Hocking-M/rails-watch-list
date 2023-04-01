@@ -1,31 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <img class="img-responsive" src="<%= @movie.poster_url %>" alt="">
+      <img class="img-fluid rounded" src="<%= @movie.poster_url %>" alt="">
     </div>
     <div class="col-md-6">
-      <h1><%= @movie.title %></h1>
-      <p>
-        <%= link_to edit_movie_path(@movie) do %>
+      <h1 class="mb-3"><%= @movie.title %></h1>
+      <div class="mb-3">
+        <%= link_to edit_movie_path(@movie), class: "btn btn-outline-primary mr-3" do %>
           <i class="fas fa-edit"></i>
         <% end %>
-      </p>
-      <p><%= link_to movies_path do %>
-        <i class="fas fa-backward"></i> Back
-      <% end %></p>
-    </div>
-    <div>
-      <p>
+        <%= link_to movies_path, class: "btn btn-outline-secondary" do %>
+          <i class="fas fa-backward"></i> Back to List
+        <% end %>
+      </div>
+      <div class="mb-3">
         <% @movie.rating.times do %>
           <i class="fas fa-star"></i>
         <% end %>
-      </p>
-      <p><%= @movie.overview %></p>
-      <p>
-        <%= link_to movie_path(@movie), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      </div>
+      <p class="mb-3"><%= @movie.overview %></p>
+      <div>
+        <%= link_to movie_path(@movie), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-      </p>
+      </div>
     </div>
   </div>
 </div>
