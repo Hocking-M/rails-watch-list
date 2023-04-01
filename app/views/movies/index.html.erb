@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <%= link_to image_tag(movie.poster_url, class: "card-img-top"), movie_path(movie) %>
+          <div class="card-body">
+            <%= link_to movie.title, movie_path(movie), class: "card-title h5" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

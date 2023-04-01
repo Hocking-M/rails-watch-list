@@ -1,16 +1,31 @@
-<div class= "container" >
-  <div class= "row" >
-    <div class= "col-md-6" >
-      <img class= "img-responsive"  src= "<%= @movie.poster_url %>"  alt= "" >
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img class="img-responsive" src="<%= @movie.poster_url %>" alt="">
     </div>
     <div class="col-md-6">
-      <h1> <%= @movie.title %> </h1>
-      <p> <%= link_to 'Edit', edit_movie_path(@movie) %> </p>
-      <p> <%= link_to 'Back', movies_path %> </p>
+      <h1><%= @movie.title %></h1>
+      <p>
+        <%= link_to edit_movie_path(@movie) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </p>
+      <p><%= link_to movies_path do %>
+        <i class="fas fa-backward"></i> Back
+      <% end %></p>
     </div>
     <div>
-      <p><span class= "movie-rating" > <%= @movie.rating %> </span> </p>
-      <p><%= @movie.overview %> <p>
+      <p>
+        <% @movie.rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </p>
+      <p><%= @movie.overview %></p>
+      <p>
+        <%= link_to movie_path(@movie), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>
