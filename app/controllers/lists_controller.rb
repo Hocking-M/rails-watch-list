@@ -13,6 +13,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.cover_image.attach(params[:list][:cover_image])
     if @list.save
       redirect_to list_path(@list), notice: 'List was successfully created.'
     else
@@ -39,7 +40,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :cover_image)
   end
 
   def set_list

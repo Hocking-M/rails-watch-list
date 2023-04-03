@@ -1,7 +1,10 @@
 <div class= "form-group" >
   <%= simple_form_for(@list) do |f| %>
     <%= f.input :name, autofocus: true, placeholder: 'Add name to list', input_html: { class: 'form-control' } %>
+    <%= f.label :cover_image %>
+    <%= f.file_field :cover_image, class: 'form-control' %>
+    </div>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
-  <p> <%= link_to 'Back', lists_path %> </p>
+  <p> <%= link_to 'Back', lists_path %> </p >
 </div>

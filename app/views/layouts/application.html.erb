@@ -12,7 +12,9 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/banner' %>
+    <% unless controller_name == 'lists' && action_name == 'show' %>
+      <%= render 'shared/banner' %>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
 
